@@ -18,4 +18,22 @@
 // Write in English or Thai. Do not skip this step.
 //
 // Your thinking:
-//
+
+// จากโจทย์ต้องการข้อมูลประวัติการรับ order ของ Jane Doe 
+// โดยที่ต้องการข้อมูลแค่วันที่ที่รับออร์เดอร์และมูลค่าของออร์เดอร์เท่านั้น 
+// เราจะใช้ข้อมูลจาก fine order แล้วใส่ query แรกที่ต้องการ คือ staff.first_name และ staff.last_name เพื่อเป็นเจาะจงตัวบุคคล
+// และใส่ปีกกาที่สอง เพื่อกำหนด order_date:1 และ total_price:1, เพื่อแสดงค่าที่ต้องการ
+// แล้วใส่ _id:0 (ปกติ MongoDB จะ return _id มาด้วยเสมอถ้าไม่ปิดไว้) แต่จะไม่แสดง เพราะ id:0 คือไม่แสดงค่า
+
+use("chrome-burger-db");
+db.orders.find(
+    {
+    "staff.first_name":"Jane",
+    "staff.last_name":"Doe"
+    },
+    {
+        order_date:1,
+        total_price:1,
+        _id:0
+    }
+);
