@@ -17,5 +17,11 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
---
+
+-- โจทย์ถามหา name กับ price ของทุกเมนูประเภท side
+-- เราจึงใช้ select "เลือก (Select)" มาก็คือ ชื่อเมนู (name) และ ราคา (price) 
+-- ซึ่งจะต้องเป็น เมนูและราคา ที่อยู่ใน menuitems ในหมวด category = "Side" หรือเครื่องเคียง มาแสดงผล
+
+SELECT name,price 
+FROM MenuItems 
+WHERE category='Side';

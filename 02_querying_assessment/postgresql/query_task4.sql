@@ -17,4 +17,20 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
+
+-- โจทย์ต้องการหาว่ามีวัตถุดิบ(ingredients) ตัวไหนบ้างที่รับมาจาก supplier ชื่อ "Freshest Farm Produce" 
+-- เนื่องจากอาจล่าช้าในการส่งมอบครั้งต่อไป เพื่อประเมินผลกระทบ ก่อนตัดสินใจหา supplier สำรอง
+-- เริ่มจากหาชื่อวัตถุดิบก่อน ต้องหาจากตาราง ingredients ส่วนของ name
+-- แต่ว่าใน ingredient มันดันไม่มีชื่อฟาร์ม งั้นจึงต้องเชื่อมข้อมูลตาราง
+-- โดยใช้ inner join เพื่อเชื่อมตารางคู่ค้า ingredients กับ suppliers การเชื่อมต่อผ่านฟิลด์เชื่อมโยงใช้ ON
+-- โดยที่ข้อมูลตรงส่วนที่จะเชื่อมกับคือ supplier_id ของทั้งสองตาราง ก็จะสามารถรู้ได้ว่า
+-- supplier_id นั้นๆ = supplier.name และใช้ WHERE เพื่อระบุชื่อซัพพลายเออร์เป้าหมายตามที่โจทย์ต้องการ
+-- WHERE Suppliers.name = 'Freshest Farm Produce' เพื่อระบุว่าต้องการเจ้านี้เท่านั้น
+
+SELECT Ingredients.name
+FROM Ingredients
+INNER JOIN Suppliers 
+ON Ingredients.supplier_id = Suppliers.supplier_id
+WHERE Suppliers.name = 'Freshest Farm Produce'
+
+-- ข้อนี้ใช้ ai และเปิดของเพื่อนเจนเมทดู เพื่อไข้ข้อสงสัยและทำความเข้าใจให้มากยิ่งขึ้น

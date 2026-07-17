@@ -17,5 +17,11 @@
 -- Write in English or Thai. Do not skip this step.
 --
 -- Your thinking:
---
---
+
+-- โจทย์ถามหา first_name กับ last_name ของพนักงานที่เป็น cook
+-- เราจึงใช้ select "เลือก (Select)" แล้วใช้ข้อมูลที่เกี่ยวกับ first_name และ last_name 
+-- ที่อยู่ในไฟล์ staff แล้วตามด้วย cook ที่เป็นชื่อตำแหน่ง
+
+SELECT first_name , last_name
+FROM Staff
+WHERE role = 'Cook';
